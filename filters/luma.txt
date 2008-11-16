@@ -1,0 +1,49 @@
+OpenGL GLSL Shaders
+
+As I'm getting to OpenGL shaders I thought it would be useful for myself, and possibly others, to catalogue various routines here as I progress in my experiments.
+
+If you have any optimisation tricks then I'd be happy to hear them!
+
+RGB to Luma
+
+float toLuma( vec3 pRGB )
+{
+	return( ( pRGB.r * 0.2126 ) + ( pRGB.g * 0.7152 ) + ( pRGB.b * 0.0722 ) );
+}
+
+
+
+Hard Edge Luma Key
+
+Vertex Shader
+
+varying vec2 vTexST;
+
+void main()
+{
+	gl_Position = ftransform();
+	
+	vTexST= gl_MultiTexCoord0.st;
+}
+
+
+
+Fragment Shader
+
+uniform sampler2D uTex;
+uniform float uLumaKeyMin;
+uniform float uLumaKeyMax;
+
+varying vec2 vTexST;
+
+void main()
+{
+	float		Luma  = toLuma( texture2D( uTex, vTexST).rgb );
+	
+	if( Luma < uLumaKeyMin || Luma > uLumaKeyMax )
+	{
+		discard;
+	}
+	
+	gl_FragColor = texture2D( uTex, vTexST);
+}

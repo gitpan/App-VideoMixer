@@ -1,0 +1,26 @@
+---
+abstract: 'a simple video mixer using OpenGL'
+author:
+  - 'Max Maischein (corion@cpan.org)'
+distribution_type: module
+generated_by: 'Module::Install version 0.77'
+license: Perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: App-VideoMixer
+no_index:
+  directory:
+    - bin
+    - filters
+    - inc
+    - t
+requires:
+  Class::Accessor: 0
+  Imager: 0.60
+  OpenGL: 0.56
+  OpenGL::Shader: 1.01
+  parent: 0.221
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.02

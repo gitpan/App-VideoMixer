@@ -1,0 +1,39 @@
+=over 4
+
+=item *
+
+Add (Win32) TTF rendering
+
+L<http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=14>
+
+Find out why it darkens the whole image (lighting)
+
+Find out how to just draw the text over the rest of the image
+
+=item * 20080305
+
+Add text overlay filter (to scroll various words slowly)
+
+OBEY!
+
+=item * 20080303
+
+Create Warhol filter
+
+=item * 20080302
+
+Create MetaImage filter
+
+Resample the whole image into a small image and modulate it with
+the luminance or colour of the reference pixel.
+
+=item * 20080218
+
+Implemented linear rotateable wipe
+
+Parameters:
+    wipe position
+    wipe angle
+    transition ramp width
+
+=back
